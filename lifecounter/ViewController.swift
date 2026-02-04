@@ -237,5 +237,14 @@ class ViewController: UIViewController{
         }
         return result
     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showHistory",
+           let dest = segue.destination as? HistoryViewController {
+            dest.history = history
+        }
+    }
+
+
 }
 
